@@ -64,10 +64,15 @@ async function messageFunc(event) {
   if (target_number !== NaN) {
     if (target_number > 100) {
       //100秒よりも大きい数字だった場合
-
-      message = { type: "text" };
+      message = {
+        type: "text",
+        text:
+          "100秒までしか対応しておりません。も少し小さい数字でお願いします。",
+      };
     } else {
       //その時間待って応答する
+      setTimeout(() => {
+      }, target_number)
     }
   } else {
     //数値じゃなかった場合
